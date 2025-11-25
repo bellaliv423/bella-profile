@@ -303,7 +303,7 @@
             color: var(--gold-primary);
             margin-bottom: 1.5rem;
             font-weight: 400;
-            animation: fadeUp 0.6s ease-out 0.3s both;
+            animation: fadeUp 1s ease-out 0.4s both;
         }
 
         @keyframes fadeUp {
@@ -321,7 +321,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: fadeUp 0.6s ease-out 0.4s both;
+            animation: fadeUp 1s ease-out 0.5s both;
         }
 
         .hero-name-chinese {
@@ -331,7 +331,7 @@
             color: var(--gold-light);
             margin-bottom: 2.5rem;
             letter-spacing: 8px;
-            animation: fadeUp 0.6s ease-out 0.45s both;
+            animation: fadeUp 1s ease-out 0.6s both;
         }
 
         .hero-tagline {
@@ -343,7 +343,7 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 2;
-            animation: fadeUp 0.6s ease-out 0.5s both;
+            animation: fadeUp 1s ease-out 0.7s both;
         }
 
         .hero-cta {
@@ -351,8 +351,7 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeUp 0.6s ease-out 0.55s both;
-            margin-bottom: 0;
+            animation: fadeUp 1s ease-out 0.8s both;
         }
 
         .cta-btn {
@@ -398,46 +397,27 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.8rem;
-            z-index: 15;
-            animation: fadeUp 0.6s ease-out 0.5s both;
-            padding: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .scroll-indicator:hover {
-            transform: translateX(-50%) translateY(3px);
+            gap: 0.5rem;
+            animation: fadeUp 1s ease-out 1s both;
         }
 
         .scroll-text {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            color: var(--gold-primary);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
             text-transform: uppercase;
-            font-weight: 500;
-            margin-bottom: 0.3rem;
         }
 
         .scroll-line {
-            width: 2px;
-            height: 40px;
+            width: 1px;
+            height: 50px;
             background: linear-gradient(180deg, var(--gold-primary), transparent);
-            animation: scrollPulse 1.5s ease-in-out infinite;
-            border-radius: 2px;
+            animation: scrollPulse 2s ease-in-out infinite;
         }
 
         @keyframes scrollPulse {
-            0%, 100% { 
-                opacity: 0.4; 
-                height: 40px;
-                transform: scaleY(1);
-            }
-            50% { 
-                opacity: 1; 
-                height: 40px;
-                transform: scaleY(1.3);
-            }
+            0%, 100% { opacity: 0.3; height: 50px; }
+            50% { opacity: 1; height: 60px; }
         }
 
         /* Section Common Styles */
@@ -1797,14 +1777,6 @@
             }
         }
         
-        /* Performance optimization for mobile */
-        @media (max-width: 768px) {
-            .fade-in {
-                transform: translateY(15px);
-                transition: opacity 0.4s ease, transform 0.4s ease;
-            }
-        }
-        
         /* Disable animations for users who prefer reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
@@ -1817,15 +1789,13 @@
         /* Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            will-change: opacity, transform;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
-            will-change: auto;
         }
 
         .fade-in-delay-1 { transition-delay: 0.1s; }
@@ -1896,37 +1866,6 @@
 
             .hero {
                 padding: 7rem 1.5rem 5rem;
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                position: relative;
-            }
-            
-            /* Fix scroll indicator position on mobile */
-            .scroll-indicator {
-                bottom: 2rem;
-                gap: 0.5rem;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .scroll-text {
-                font-size: 0.65rem;
-                letter-spacing: 2px;
-            }
-            
-            .scroll-line {
-                height: 30px;
-            }
-            
-            /* Prevent overlapping elements */
-            .hero-content {
-                position: relative;
-                z-index: 10;
-                padding-bottom: 2rem;
-                margin-bottom: 2rem;
             }
 
             .hero-tagline {
@@ -1936,18 +1875,12 @@
             .hero-cta {
                 flex-direction: column;
                 align-items: center;
-                gap: 1rem;
-                margin-top: 2rem;
-                margin-bottom: 0;
-                position: relative;
-                z-index: 10;
             }
 
             .cta-btn {
                 width: 100%;
                 max-width: 280px;
                 justify-content: center;
-                padding: 0.9rem 2rem;
             }
 
             .expertise-grid {
@@ -2058,21 +1991,6 @@
         }
 
         @media (max-width: 480px) {
-            /* Additional mobile optimizations for scroll indicator */
-            .scroll-indicator {
-                position: relative;
-                padding: 20px 10px 10px;
-                margin-top: auto;
-            }
-            
-            .hero-content {
-                padding-bottom: 5rem;
-            }
-            
-            .hero-name {
-                font-size: 2.5rem;
-            }
-            
             .stats-grid {
                 grid-template-columns: 1fr;
             }
@@ -2276,8 +2194,8 @@
             </div>
         </div>
 
-        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
-            <span class="scroll-text">SCROLL</span>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
             <span class="scroll-line"></span>
         </div>
     </section>
