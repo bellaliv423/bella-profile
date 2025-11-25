@@ -1895,11 +1895,12 @@
             }
 
             .hero {
-                padding: 7rem 1.5rem 5rem;
+                padding: 6rem 1.5rem 2.5rem;
                 min-height: 100vh;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: center;
+                align-items: center;
                 position: relative;
             }
             
@@ -2060,13 +2061,16 @@
         @media (max-width: 480px) {
             /* Additional mobile optimizations for scroll indicator */
             .scroll-indicator {
-                position: relative;
-                padding: 20px 10px 10px;
-                margin-top: auto;
+                position: absolute;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                min-width: 70px;
+                padding: 10px 12px;
             }
             
             .hero-content {
-                padding-bottom: 5rem;
+                padding-bottom: 4rem;
             }
             
             .hero-name {
