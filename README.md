@@ -1,2 +1,0 @@
-# bella-profile
-bella-profile
